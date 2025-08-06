@@ -61,7 +61,7 @@ void solve()
 	for (int i = 0; i < k; ++i)
 	{
 		cin >> x;
-		v[x]++;
+		v[x] ++;
 		for (int j = 0; j < 16; ++j)
 		{
 			T[j][j + x & 15]++;
