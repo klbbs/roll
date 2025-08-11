@@ -34,13 +34,16 @@ struct Decimal {
         reverse(b.begin(), b.end());
         shrink_to_fit();
     }
+    
     void shrink_to_fit() {
         for( ; !a.empty() && !a.back(); a.pop_back());
         for( ; !b.empty() && !b.back(); b.pop_back());
     }
+
     int size() const {
         return max(a.size(), b.size());
     }
+
     int reduceOne(LL &v) const {
         int r = v & BMSK;
         v = (v - r) >> BLEN;
@@ -50,6 +53,7 @@ struct Decimal {
         }
         return r;
     }
+
     Decimal operator * (Decimal const &t) const {
         int sz = size(), tsz = t.size(), len = sz + tsz - 1;
         LL va = 0, vb = 0;
